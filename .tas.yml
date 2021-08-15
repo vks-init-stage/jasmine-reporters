@@ -1,0 +1,16 @@
+---
+framework: jasmine
+configFile: "./spec/support/jasmine.json"
+postmerge:
+  pattern:
+    - "./spec/**/*Spec.js"
+  strategy:
+    threshold: <5|100s|30m|6h>
+    type: <commit|time>
+premerge:
+  - "./spec/**/*Spec.js"
+prerun:
+  - npm i
+postrun:
+  - node --version
+version: 2.0
