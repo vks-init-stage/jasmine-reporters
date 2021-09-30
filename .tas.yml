@@ -2,7 +2,6 @@
 framework: jasmine
 blacklist:
   - 'spec/JUnitXmlReporterSpec.js##JUnitXmlReporter##constructor##file prefix##'
-configFile: "./spec/support/jasmine.json"
 postMerge:
   pattern:
     - "./spec/**/*Spec.js"
