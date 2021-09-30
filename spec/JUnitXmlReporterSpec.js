@@ -83,81 +83,82 @@ describe("JUnitXmlReporter", function(){
         setupReporterWithOptions();
     });
 
-    // describe("constructor", function(){
-    //     it("should default path to an empty string", function(){
-    //         expect(reporter.savePath).toEqual("");
-    //     });
-    //     it("should default consolidateAll to true", function(){
-    //         expect(reporter.consolidateAll).toBe(true);
-    //     });
-    //     it("should default consolidate to true", function(){
-    //         expect(reporter.consolidate).toBe(true);
-    //     });
-    //     it("should default useDotNotation to true", function(){
-    //         expect(reporter.useDotNotation).toBe(true);
-    //     });
+    describe("constructor", function(){
+        it("should default path to an empty string", function(){
+            expect(reporter.savePath).toEqual("");
+            console.log("ajhdkjshkjfhdsjkfhjdkhfjkdhsk");
+        });
+        it("should default consolidateAll to true", function(){
+            expect(reporter.consolidateAll).toBe(true);
+        });
+        it("should default consolidate to true", function(){
+            expect(reporter.consolidate).toBe(true);
+        });
+        it("should default useDotNotation to true", function(){
+            expect(reporter.useDotNotation).toBe(true);
+        });
 
-    //     describe("file prefix", function(){
-    //         it("should default output file prefix to 'junitresults'", function () {
-    //             expect(reporter.filePrefix).toBe("junitresults");
-    //         });
-    //         it("should default output file prefix to 'junitresults-' if consolidateAll is false", function () {
-    //             setupReporterWithOptions({
-    //                 consolidateAll: false
-    //             });
-    //             expect(reporter.filePrefix).toBe("junitresults-");
-    //         });
-    //         it("should prefix suite names if consolidateAll is false", function () {
-    //             setupReporterWithOptions({
-    //                 consolidateAll: false,
-    //                 filePrefix: "alt-prefix-"
-    //             });
-    //             triggerRunnerEvents();
-    //             expect(reporter.writeFile).toHaveBeenCalledWith("alt-prefix-ParentSuite.xml", jasmine.any(String));
-    //         });
-    //     });
+        describe("file prefix", function(){
+            it("should default output file prefix to 'junitresults'", function () {
+                expect(reporter.filePrefix).toBe("junitresults");
+            });
+            it("should default output file prefix to 'junitresults-' if consolidateAll is false", function () {
+                setupReporterWithOptions({
+                    consolidateAll: false
+                });
+                expect(reporter.filePrefix).toBe("junitresults-");
+            });
+            it("should prefix suite names if consolidateAll is false", function () {
+                setupReporterWithOptions({
+                    consolidateAll: false,
+                    filePrefix: "alt-prefix-"
+                });
+                triggerRunnerEvents();
+                expect(reporter.writeFile).toHaveBeenCalledWith("alt-prefix-ParentSuite.xml", jasmine.any(String));
+            });
+        });
 
-    //     describe("package", function () {
-    //         it("should default output package to undefined", function () {
-    //             expect(reporter.package).toBeUndefined();
-    //         });
-    //         it("should not set output package if a non-string is provided", function() {
-    //             setupReporterWithOptions({package:true});
-    //             expect(reporter.package).toBeUndefined();
+        describe("package", function () {
+            it("should default output package to undefined", function () {
+                expect(reporter.package).toBeUndefined();
+            });
+            it("should not set output package if a non-string is provided", function() {
+                setupReporterWithOptions({package:true});
+                expect(reporter.package).toBeUndefined();
 
-    //             setupReporterWithOptions({package:["test"]});
-    //             expect(reporter.package).toBeUndefined();
-    //         });
-    //         it("should set output package to the provided string", function () {
-    //             setupReporterWithOptions({package:"testPackage"});
-    //             expect(reporter.package).toBe("testPackage");
-    //         });
-    //     });
+                setupReporterWithOptions({package:["test"]});
+                expect(reporter.package).toBeUndefined();
+            });
+            it("should set output package to the provided string", function () {
+                setupReporterWithOptions({package:"testPackage"});
+                expect(reporter.package).toBe("testPackage");
+            });
+        });
 
-    //     describe("stylesheetPath", function () {
-    //         it("should default stylesheetPath to undefined", function () {
-    //             expect(reporter.stylesheetPath).toBeUndefined();
-    //         });
-    //         it("should not set stylesheetPath if an empty or non-string is provided", function() {
-    //             setupReporterWithOptions({stylesheetPath:true});
-    //             expect(reporter.stylesheetPath).toBeUndefined();
+        describe("stylesheetPath", function () {
+            it("should default stylesheetPath to undefined", function () {
+                expect(reporter.stylesheetPath).toBeUndefined();
+            });
+            it("should not set stylesheetPath if an empty or non-string is provided", function() {
+                setupReporterWithOptions({stylesheetPath:true});
+                expect(reporter.stylesheetPath).toBeUndefined();
 
-    //             setupReporterWithOptions({stylesheetPath:""});
-    //             expect(reporter.stylesheetPath).toBeUndefined();
-    //         });
-    //         it("should set output stylesheetPath to the provided string", function () {
-    //             setupReporterWithOptions({stylesheetPath:"mystyle.xslt"});
-    //             expect(reporter.stylesheetPath).toBe("mystyle.xslt");
-    //         });
-    //         it("should include the stylesheet in all generated output files", function () {
-    //             setupReporterWithOptions({consolidate: false, stylesheetPath:"mystyle.xslt"});
-    //             triggerRunnerEvents();
-    //             writeCalls.forEach(call => {
-    //                 expect(call.output.indexOf('<?xml-stylesheet type="text/xsl" href="mystyle.xslt"')).toBeGreaterThan(-1);
-    //             });
-    //         });
-    //     });
-    // });
+                setupReporterWithOptions({stylesheetPath:""});
+                expect(reporter.stylesheetPath).toBeUndefined();
+            });
+            it("should set output stylesheetPath to the provided string", function () {
+                setupReporterWithOptions({stylesheetPath:"mystyle.xslt"});
+                expect(reporter.stylesheetPath).toBe("mystyle.xslt");
+            });
+            it("should include the stylesheet in all generated output files", function () {
+                setupReporterWithOptions({consolidate: false, stylesheetPath:"mystyle.xslt"});
+                triggerRunnerEvents();
+                writeCalls.forEach(call => {
+                    expect(call.output.indexOf('<?xml-stylesheet type="text/xsl" href="mystyle.xslt"')).toBeGreaterThan(-1);
+                });
+            });
+        });
+    });
 
     function assertTestsuitesTagAttributes(testSuitesTag, {disabled, errors, failures, tests} = {}) {
         if (disabled === void 0) {
