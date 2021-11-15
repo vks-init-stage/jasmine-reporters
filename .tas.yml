@@ -1,5 +1,11 @@
 ---
 framework: jasmine
+postMerge:
+  pattern:
+    - "./spec/**/*Spec.js"
+  strategy:
+    threshold: <5|100s|30m|6h>
+    type: <commit|time>
 blacklist:
   - 'spec/JUnitXmlReporterSpec.js##JUnitXmlReporter##constructor##file prefix##'
 preMerge:
