@@ -1,4 +1,5 @@
 # testing
+
 [![Build Status](https://travis-ci.org/larrymyers/jasmine-reporters.svg?branch=master)](https://travis-ci.org/larrymyers/jasmine-reporters)
 
 This branch is for Jasmine 2.x.
