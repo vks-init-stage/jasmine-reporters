@@ -12,6 +12,8 @@ preMerge:
   pattern:
     - "./spec/**/*Spec.js"
 preRun:
+ command:
   - npm i
 postRun:
+ command:
   - node --version
