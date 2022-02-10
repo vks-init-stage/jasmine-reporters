@@ -1,4 +1,4 @@
-/* globals jasmine, describe, beforeEach, it, expect */
+/* globals jasmine, describe, beforeEach, it, expect sdfsdf*/
 var jasmineReporters = require("../index");
 
 var env, suite, subSuite, subSubSuite,
