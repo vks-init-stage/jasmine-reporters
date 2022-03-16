@@ -7,7 +7,7 @@
     } else {
         exportObject = global.jasmineReporters = global.jasmineReporters || {};
     }
-
+/*sdf */
     function trim(str) { return str.replace(/^\s+/, "").replace(/\s+$/, ""); }
     function elapsed(start, end) { return (end - start)/1000; }
     function isFailed(obj) { return obj.status === "failed"; }
