@@ -1,4 +1,4 @@
-/* globals jasmine, describe, afterEach, beforeEach, it, expect  sdf*/
+/* globals jasmine, describe, afterEach, beforeEach, it, expect  sd sdff*/
 var jasmineReporters = require("../index");
 var DOMParser = require("xmldom").DOMParser;
 
