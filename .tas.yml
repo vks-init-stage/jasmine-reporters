@@ -1,7 +1,7 @@
 ---
 framework: jasmine
 blocklist:
- - "spec/JUnitXmlReporterSpec.js##JUnitXmlReporter"
+ - "spec/JUnitXmlReporterSpec.js"
 postMerge:
   pattern:
     - "./spec/**/*Spec.js"
