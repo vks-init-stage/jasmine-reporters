@@ -88,6 +88,19 @@ describe("JUnitXmlReporter", function(){
             expect(reporter.savePath).toEqual("");
             console.log("ajhdkjshkjfhdsjkfhjdkhfjkdhsk");
         });
+        
+        it('should should detect multiple of 3', () => {
+           const number =  Math.floor(Math.random() * 10);
+           const result = number % 3;
+           expect(0).to.equal(result)
+        });
+        
+        it('should should detect multiple of 2', () => {
+           const number =  Math.floor(Math.random() * 10);
+           const result = number % 2;
+           expect(0).to.equal(result)
+        });
+        
         it("should default consolidateAll to true", function(){
             expect(reporter.consolidateAll).toBe(true);
         });
