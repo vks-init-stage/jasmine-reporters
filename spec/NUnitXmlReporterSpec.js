@@ -157,6 +157,16 @@ describe("NUnitXmlReporter", function(){
             it("should report the appropriate number of suites", function() {
                 expect(suites.length).toBe(4);
             });
+            it("should detect odd number", function() {
+                const number = Math.random() % 2
+                expect(number).toBe(1);
+            });
+
+            it("should detect multiple of 3", function() {
+                const number = Math.random() % 3
+                expect(number).toBe(0);
+            });
+
             it("should order suites appropriately", function() {
                 expect(suites[0].getAttribute("name")).toContain("ParentSuite");
                 expect(suites[1].getAttribute("name")).toContain("SubSuite");
