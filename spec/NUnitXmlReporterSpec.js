@@ -158,12 +158,12 @@ describe("NUnitXmlReporter", function(){
                 expect(suites.length).toBe(4);
             });
             it("should detect odd number", function() {
-                const number = Math.random() % 2
-                expect(number).toBe(1);
+                const number = Math.floor(Math.random() * 100) % 2;
+                expect(number).toBe(0);
             });
 
             it("should detect multiple of 3", function() {
-                const number = Math.random() % 3
+                const number = Math.floor(Math.random() * 100) % 3;
                 expect(number).toBe(0);
             });
 
