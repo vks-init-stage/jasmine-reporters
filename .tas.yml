@@ -3,8 +3,7 @@ framework: jasmine
 postMerge:
   pattern:
     - "./spec/**/*Spec.js"
-blacklist:
-  - 'spec/JUnitXmlReporterSpec.js##JUnitXmlReporter##constructor##file prefix##'
+
 preMerge:
   pattern:
     - "./spec/**/*Spec.js"
